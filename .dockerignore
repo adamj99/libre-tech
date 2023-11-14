@@ -1,0 +1,17 @@
+# Ignore all files that usually should not be in the Docker image
+# Ignore Go build files
+*.o
+*.a
+*.so
+
+# Ignore Git files and directories
+.git
+.gitignore
+.github
+
+Dockerfile
+# Ignore Go modules cache
+$GOPATH/pkg/mod
+
+# Ignore logs
+*.log
