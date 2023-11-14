@@ -68,7 +68,7 @@ As before, you can access the `/login` and `/secret` endpoints at `http://localh
 This workflow does the following:
 
 - Checks out the repository to the runner.
-- ets up a Go environment with the specified Go version.
+- Sets up a Go environment with the specified Go version.
 - Builds the Go application.
 - Runs tests in your Go application.
 - Lints the Go code using golangci-lint.
