@@ -27,7 +27,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 # Start a new stage from scratch
 FROM scratch
 
-ENV PORT_NUMBER=8080
 # Copy the binary from the builder stage
 COPY --from=builder /app/main /main
 # Expose port 8080

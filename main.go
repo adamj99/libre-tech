@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 
@@ -37,11 +36,6 @@ func main() {
 	if app_secret == "" {
 		log.Fatal("APP_SECRET environment variable is not set")
 	}
-	app_port := viper.GetString("PORT_NUMBER")
-	// If PORT_NUMBER is not set, log an error and stop the application
-	if app_secret == "" {
-		log.Fatal("PORT_NUMBER environment variable is not set")
-	}
 	// Create a new router
 	r := mux.NewRouter()
 	r.Handle("/metrics", promhttp.Handler())
@@ -50,7 +44,7 @@ func main() {
 		secretHandler(w, r, app_secret)
 	})
 	// Start the HTTP server on port 8080, and log an error if it fails to start
-	err := http.ListenAndServe(fmt.Sprintf(":%s", app_port), r)
+	err := http.ListenAndServe((":8080"), r)
 	if err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
